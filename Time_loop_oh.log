@@ -1,0 +1,12 @@
+10000 Runs: Time reading overhead = 10000
+
+Count for 0 loop iteration = 8
+Count for 1 loop iteration = 59
+Count for 2 loop iteration = 245
+Count for 3 loop iteration = 2083
+Count for 4 loop iteration = 21393
+Count for 5 loop iteration = 211294
+Count for 6 loop iteration = 2128284
+Count for 7 loop iteration = 21923021
+Count for 8 loop iteration = 218942030
+

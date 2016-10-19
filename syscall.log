@@ -1,0 +1,8 @@
+MAIN : Time for 1st GetPID = 37050
+MAIN : Time for 2nd GetPID = 105
+Child : Time for Fork= 488788
+Child : Time for GetPID = 277
+Child : Time for GetPPID = 112690
+MAIN : Time for 1st GetPID = 37050
+MAIN : Time for 2nd GetPID = 105
+Parent : Time for GetPID = 582

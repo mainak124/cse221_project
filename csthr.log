@@ -1,0 +1,40 @@
+write[10] = 3296096673
+write[9] = 3296412735
+write[8] = 3296426297
+write[7] = 3296432679
+write[6] = 3296438245
+write[5] = 3296443295
+write[4] = 3296447991
+write[3] = 3296452771
+write[2] = 3296457501
+write[1] = 3296462215
+read[10] = 3296096673
+
+Context Switch Time[10] = 1172736
+read[9] = 3296412735
+
+Context Switch Time[9] = 874324
+read[8] = 3296426297
+
+Context Switch Time[8] = 867360
+read[7] = 3296432679
+
+Context Switch Time[7] = 867868
+read[6] = 3296438245
+
+Context Switch Time[6] = 868150
+read[5] = 3296443295
+
+Context Switch Time[5] = 869024
+read[4] = 3296447991
+
+Context Switch Time[4] = 870132
+read[3] = 3296452771
+
+Context Switch Time[3] = 871286
+read[2] = 3296457501
+
+Context Switch Time[2] = 872298
+read[1] = 3296462215
+
+Context Switch Time[1] = 875390
