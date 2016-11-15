@@ -37,6 +37,7 @@ uint32_t t1,t2,t3,t4,t5,t6,t7;
 		t1 = rdtsc32();
 		pid = getpid();
 		t2 = rdtsc32();
+		printf ( "Parent : Time for OldProcess = %u\n", t1-t3);
 		printf ( "Parent : Time for GetPID = %u\n", t2-t1);
 		wait();
 	} 

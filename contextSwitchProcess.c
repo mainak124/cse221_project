@@ -16,24 +16,26 @@ int main() {
 		int n;
 		uint32_t now;
 		close(fd[0]);
-		for (n = 10; n > 0; n--) {
-			now = rdtsc32();
-			write(fd[1], (int *) &now, sizeof(now));
-			printf("write[%d] = %u\n", n, now);
-		}		
+//		for (n = 10; n > 0; n--) {
+		now = rdtsc32();
+		write(fd[1], (int *) &now, sizeof(now));
+		close(fd[1]);
+			// printf("write[%d] = %u\n", n, now);
+//		}		
 	}
 	else {
-		int k, ntime;
+		int k=0, ntime;
 		uint32_t curr, time;
-		static int contextSwitchTime[10];
+		static int contextSwitchTime;
 		close(fd[1]);
-		for(k = 10; k > 0; k--) {
-			ntime = read(fd[0], (int *) &time, sizeof(time));
-			curr = rdtsc32();
-			contextSwitchTime[k] = curr - time;
-			printf("read[%d] = %u\n", k, time);
-			printf("Context Switch Time[%d] = %u\n", k, contextSwitchTime[k]);
-		}
+//		for(k = 10; k > 0; k--) {
+		ntime = read(fd[0], (int *) &time, sizeof(time));
+		curr = rdtsc32();
+		contextSwitchTime = curr - time;
+		// printf("read[%d] = %u\n", k, time);
+		printf("Context Switch Time = %u\n", contextSwitchTime);
+		close(fd[0]);
+//		}
 	}
 	return 0;
 }
