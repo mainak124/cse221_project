@@ -33,29 +33,26 @@ uint32_t time_total= 0;
 
 
 	data1.time_in = rdtsc32();
-	data2.time_in = rdtsc32();
+//	data2.time_in = rdtsc32();
 	
 	/* initialize data to pass to thread 2 */
 	
 	/* create threads 1 and 2 */    
 	pthread_create (&thread1, NULL, (void *) &print_message_function, &data1);
-	pthread_create (&thread2, NULL, (void *) &print_message_function, &data2);
+//	pthread_create (&thread2, NULL, (void *) &print_message_function, &data2);
+	data2.time_in = rdtsc32();
 	
 	/* Main block now waits for both threads to terminate, before it exits
 	   If main block exits, both threads exit, even if the threads have not
 	   finished their work */ 
 	pthread_join(thread1, NULL);
-	pthread_join(thread2, NULL);
-	          
-	printf("Time : %u,%u,%u,%u\n",data1.time_in,data2.time_in,data1.time_out,data2.time_out);
+//	pthread_join(thread2, NULL);
+
+	printf("Time :, %u, %u, %u\n",data1.time_in,data1.time_out,(data2.time_in-data1.time_in));
 	/* exit */  
 	return 0;
 } /* main() */
 
-/**
- * print_message_function is used as the start routine for the threads used
- * it accepts a void pointer 
-**/
 void print_message_function ( thdata *ptr )
 {
 	uint32_t time_now,time_start;
@@ -65,10 +62,5 @@ void print_message_function ( thdata *ptr )
 	
 	data->time_out = time_now - data->time_in;
 	
-	
-	
-	/* do the work */
-//	printf("Thread %d says %s \n", data->thread_no, data->message);
-	
 	pthread_exit(0); /* exit */
-} /* print_message_function ( void *ptr ) */
+}
