@@ -12,6 +12,7 @@ uint32_t t1,t2,t3,t4,t5,t6,t7;
 
 	t1 = rdtsc32();
 	id = fork() ;
+	t2 = rdtsc32();
 //	printf("id value : %d\n",id);
 	if ( id == 0 )
 	{
@@ -20,7 +21,6 @@ uint32_t t1,t2,t3,t4,t5,t6,t7;
 	}
 	else
 	{
-		t2 = rdtsc32();
 		wait();
 		printf ( "Parent : Time for OldProcess = %u\n", t2-t1);
 	} 
