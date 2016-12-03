@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for i in `seq 1 1000`;
+do
+    sudo nice -n -20 ./client 192.168.0.2 50000;
+done
